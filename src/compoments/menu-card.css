@@ -1,0 +1,22 @@
+.menu-card-container > .menu-card{
+  border: 1px black solid;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: ivory;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-card-container > .menu-card:hover{
+  transform: scale(1.05);
+}
+.menu-card-container > .menu-card > .card-body .toppings{
+  max-width: 85%;
+}
+
+.menu-card-container > .menu-card > .card-body > img{
+  max-width: 60%;
+  border-radius: 5px;
+  border: gray solid 1px;
+}
+

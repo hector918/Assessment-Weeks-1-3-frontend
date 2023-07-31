@@ -1,0 +1,30 @@
+main > .menu-display-div{
+  height: 100%;
+}
+
+main > .menu-display-div > .menu-title{
+  height: 20vh;
+  text-align: center;
+  display: flex;
+  padding-bottom: 5vh;
+  justify-content: center;
+  align-items: flex-end;
+}
+main > .menu-display-div > .menu-panel {
+  min-height: 60vh;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  max-width: 960px;
+  
+}
+main > .menu-display-div > .menu-panel > .menu-card-container{
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  gap: 20px;
+  max-width: 960px;
+  margin: auto;
+  padding: 10px;
+}
