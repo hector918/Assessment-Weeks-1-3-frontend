@@ -12,7 +12,7 @@ export default function Menu(){
   ///////////////////////////////////////
   useEffect(() => {
     setIsLoading(true);
-    fetch_.ReadAllItems((res) => {
+    fetch_.readAllItems((res) => {
       if(res.error){
         //error
         setIsError(res.error);

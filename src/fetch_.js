@@ -44,8 +44,8 @@ async function fetch_get_async(url){
     return error;
   }
 }
-////export function//////////////////////////////////////////
-const ReadAllItems = (callback) => {
+////export function//////////////////////////////////////
+const readAllItems = (callback) => {
   try {
     fetch_get(`${API}/items`, (res) => {
       if(res.error){
@@ -58,9 +58,22 @@ const ReadAllItems = (callback) => {
     // error_handle(error);
     callback({error: 'fetch all items failed.'});
   }
-  
 }
 
+const readItemById = async(id) => {
+  try {
+    if(id !== undefined){
+      const ret = await fetch_get_async(`${API}/item/${id}`);
+      return ret;
+    }else return {error: 'id undefined.'};
+    
+  } catch (error) {
+    error_handle(error);
+    return error;
+  }
+}
+//////////////////////////////////////////
 export default {
-  ReadAllItems
+  readAllItems,
+  readItemById
 }
