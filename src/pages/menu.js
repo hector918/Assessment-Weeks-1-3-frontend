@@ -17,7 +17,7 @@ export default function Menu(){
       return <div className="menu-panel"><IsLoading /></div> ;
     }else{
       return <div className="menu-panel">
-          <div className="menu-card-container">
+          <div className="container menu-card-container">
             {menuList.map((el, idx) => <MenuCard 
               key={`menu-card-${idx}`} 
               menuItem = {el} 

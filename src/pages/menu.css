@@ -21,10 +21,7 @@ main > .menu-display-div > .menu-panel {
   
 }
 main > .menu-display-div > .menu-panel > .menu-card-container{
-  display: grid;
   grid-template-columns: 2fr 2fr 2fr;
-  gap: 20px;
-  max-width: 960px;
   margin: auto;
   padding: 10px;
 }
