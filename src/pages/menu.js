@@ -10,6 +10,23 @@ export default function Menu(){
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   ///////////////////////////////////////
+  function renderingHelper(){
+    if(isError){
+      return <IsError message = {isError} />;
+    }else if(isLoading){
+      return <div className="menu-panel"><IsLoading /></div> ;
+    }else{
+      return <div className="menu-panel">
+          <div className="menu-card-container">
+            {menuList.map((el, idx) => <MenuCard 
+              key={`menu-card-${idx}`} 
+              menuItem = {el} 
+            />)}
+          </div>
+      </div>
+    }
+  }
+  ///////////////////////////////////////
   useEffect(() => {
     setIsLoading(true);
     fetch_.readAllItems((res) => {
@@ -19,7 +36,6 @@ export default function Menu(){
       }else if(res.data){
         //successed
         setMenuList(res.data);
-
         setTimeout(() => {
           setIsLoading(false);
         }, 200);
@@ -29,16 +45,6 @@ export default function Menu(){
   ///////////////////////////////////////
   return <div className="menu-display-div">
     <div className="menu-title"><h1>Our Menu</h1></div>
-      {isError !== false ? <IsError message = {isError} />
-        :<div className="menu-panel">{isLoading === true ? <IsLoading /> 
-          :<div className="menu-card-container">
-            {menuList.map((el, idx) => <MenuCard 
-              key={`menu-card-${idx}`} 
-              menuItem = {el} 
-            />)}
-          </div>}
-        </div>
-      }
-    
+      {renderingHelper()}
   </div>
 }
