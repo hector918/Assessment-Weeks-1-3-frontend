@@ -21,7 +21,11 @@ main > .menu-display-div > .menu-panel {
   
 }
 main > .menu-display-div > .menu-panel > .menu-card-container{
-  grid-template-columns: 2fr 2fr 2fr;
   margin: auto;
   padding: 10px;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
 }

@@ -12,7 +12,9 @@ export default function Menu(){
   ///////////////////////////////////////
   function renderingHelper(){
     if(isError){
-      return <IsError message = {isError} />;
+      return <div className="menu-panel">
+        <IsError message = {isError} />
+      </div>;
     }else if(isLoading){
       return <div className="menu-panel"><IsLoading /></div> ;
     }else{

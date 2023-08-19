@@ -1,4 +1,4 @@
-const API = process.env.REACT_APP_API_URL || "https://127.0.0.1:8000";
+const API = process.env.REACT_APP_API_URL || "http://127.0.0.1:8888";
 const default_fetch_options = { 
   "Access-Control-Allow-Origin": "*" ,
   "Content-Type": "application/json",
@@ -23,7 +23,7 @@ function fetch_get(url, callback){
       callback(data);
     })
     .catch(error => {
-      callback({error: "fetch error"});
+      callback({error: error.message});
       error_handle(error);
     });
 }
@@ -56,7 +56,7 @@ const readAllItems = (callback) => {
     });
   } catch (error) {
     // error_handle(error);
-    callback({error: 'fetch all items failed.'});
+    callback({error: error.message});
   }
 }
 
