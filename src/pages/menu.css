@@ -1,8 +1,8 @@
-main > .menu-display-div{
+.menu-display-div{
   height: 100%;
 }
 
-main > .menu-display-div > .menu-title{
+.menu-display-div > .menu-title{
   height: 20vh;
   text-align: center;
   display: flex;
@@ -10,7 +10,7 @@ main > .menu-display-div > .menu-title{
   justify-content: center;
   align-items: flex-end;
 }
-main > .menu-display-div > .menu-panel {
+.menu-display-div > .menu-panel {
   min-height: 60vh;
   margin: auto;
   display: grid;
@@ -20,12 +20,7 @@ main > .menu-display-div > .menu-panel {
   max-width: 960px;
   
 }
-main > .menu-display-div > .menu-panel > .menu-card-container{
+.menu-display-div > .menu-panel > .menu-card-container{
   margin: auto;
   padding: 10px;
-}
-
-.container{
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
 }

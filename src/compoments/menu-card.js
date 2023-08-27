@@ -17,7 +17,11 @@ export default function MenuCard({menuItem}){
       <p>{menuItem.shortDescription}</p>
       <img src={menuItem.image} alt={menuItem.name}/>
       <p>Price: ${menuItem.price.toFixed(2)}</p>
-      <p className='toppings'>Toppings: {menuItem.toppings.join(', ')}</p>
+      {menuItem.toppings.length === 0 
+        ?<p>No Topping</p>
+        :<p className='toppings'>Toppings: {menuItem.toppings.join(', ')}</p>
+      }
+      
     </div>
   </div>
 }

@@ -4,6 +4,7 @@ import MenuCard from "../compoments/menu-card";
 import fetch_ from "../fetch_";
 import IsError from "../compoments/is-error";
 import IsLoading from "../compoments/is-loading";
+import Container from "../compoments/container";
 ///////////////////////////////////////
 export default function Menu(){
   const [menuList, setMenuList] = useState([]);
@@ -19,12 +20,12 @@ export default function Menu(){
       return <div className="menu-panel"><IsLoading /></div> ;
     }else{
       return <div className="menu-panel">
-          <div className="container menu-card-container">
-            {menuList.map((el, idx) => <MenuCard 
-              key={`menu-card-${idx}`} 
-              menuItem = {el} 
-            />)}
-          </div>
+        <Container className={['menu-card-container']}
+          children = {menuList.map((el, idx) => <MenuCard 
+            key={`menu-card-${idx}`} 
+            menuItem = {el} 
+          />)}
+        />
       </div>
     }
   }
